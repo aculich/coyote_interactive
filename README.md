@@ -3,32 +3,74 @@
 # Coyote Interactive
 
 ## Overview
-A modular system for interactive coyote behaviors and communications.
+Coyote Interactive is a modular, AI-powered interactive installation that brings a coyote character to life through various hardware interfaces. The system can respond to physical button interactions, comment on television content, engage in conversations, and provide visual feedback through LED indicators.
 
-## Features
-- **LEDs**: Control of LED patterns.
-- **Buttons**: Handling of button events.
-- **Audio to Text**: Continuous transcription using whisper-stream.
-- **Television Comments**: AI-powered commentary on television content.
-- **Conversation Data**: Log storage for interactions.
-  - **Conversation Archiving**: Automatic timestamped archiving of conversation history.
-- **Talk with Person**: Captures intercom speech and manages the conversation flow with AI.
-- **Wake/Sleep Modes**: System operates in different modes based on switch position.
-  - **BOOM Feature**: Press both buttons simultaneously in sleep mode to archive the current conversation.
-- **Auto-start on Boot**: System automatically starts on boot using systemd user services.
-- **System Manager**: Terminal-based utility to manage network, audio settings, and service control.
+Built on a Raspberry Pi platform with Python, the project combines hardware integration (GPIO pins, LEDs, buttons), audio processing (speech-to-text and text-to-speech), and LLM-based AI responses to create an engaging, interactive character.
 
-## Setup
-- Install dependencies (Python, gpiozero, whisper-stream, etc.).
-- Configure GPIO pins and other settings in config files.
-- Run system configuration checks with the manager's setup.py script.
+## Key Features
+
+### Core Functionality
+- **Conversation with AI**: Interact with an AI-powered coyote character through an intercom system
+- **Television Commentary**: The coyote comments on what's happening on television
+- **Continuous Transcription**: Real-time audio-to-text using whisper-stream
+- **Visual Feedback**: LED patterns indicate different system states and activities
+- **Physical Interaction**: Hardware buttons trigger different interaction modes
+- **Wake/Sleep Modes**: System operates in different modes based on switch position
+
+### System Components
+- **LEDs**: Control of different LED patterns (breathing, flashing, erratic, constant)
+- **Buttons**: Handling of button press/release events
+- **Audio Processing**: Text-to-speech and speech-to-text conversion
+- **Conversation Management**: Storing, archiving, and managing conversation history
+- **System Management**: Terminal-based utility for controlling network, audio, and services
+
+### Special Features
+- **Conversation Archiving**: BOOM feature triggers timestamped conversation backup
+- **Auto-start on Boot**: System automatically starts using systemd user services
+- **System Manager**: Terminal utility for managing all system components
+
+## Hardware Requirements
+- Raspberry Pi (with GPIO pins)
+- LEDs for visual feedback
+- Buttons/switches for physical interaction
+- Microphone for audio input
+- Speaker for audio output
+
+## Software Dependencies
+- Python 3.8+
+- gpiozero for GPIO control
+- lgpio for low-level GPIO operations
+- OpenAI or compatible API for LLM integration
+- whisper-stream for speech recognition
+- Textual for TUI interface
+- Various system utilities (PulseAudio, NetworkManager, etc.)
+
+## Setup and Installation
+See the detailed setup instructions below for how to install and configure the system.
 
 ## Usage
-### Running Manually
-- `python coyote.py`
-- `./manager/run_manager.py` (for the system manager utility)
+The system operates in two main modes:
+- **Wake Mode**: Actively responds to button presses for TV or person interactions
+- **Sleep Mode**: System is idle but monitors for the "BOOM" button combination
 
-### Auto-start Configuration
+### Running the System
+- Manually: `python coyote.py` 
+- System Manager: `./manager/run_manager.py`
+- Auto-start: Configured systemd service (`coyote.service`)
+
+## System Architecture
+The codebase follows a modular approach with components for:
+- Main program logic (`coyote.py`)
+- Hardware control (buttons, LEDs)
+- Audio processing (speech recognition, synthesis)
+- AI interaction (prompts, conversation management)
+- System management (network, audio, services)
+
+## Demo Video
+[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=pncuq-U_tuU)  
+[![Video Thumbnail](https://img.youtube.com/vi/pncuq-U_tuU/0.jpg)](https://www.youtube.com/watch?v=pncuq-U_tuU)
+
+## Auto-start Configuration
 The system is configured to automatically start on boot using systemd:
 - Service runs in a Byobu session for easy attachment/detachment
 - Full environment context is maintained (Python virtual environment, working directory, etc.)
@@ -36,7 +78,7 @@ The system is configured to automatically start on boot using systemd:
 - To attach to the running session: `byobu attach -t coyote_session` (or use alias `b`)
 - To check service status: `systemctl --user status coyote.service`
 
-#### Setting Up Auto-start (Systemd Service)
+### Setting Up Auto-start (Systemd Service)
 
 1. **Copy the service file to systemd user directory**:
    ```bash
@@ -70,82 +112,7 @@ The system is configured to automatically start on boot using systemd:
    source ~/.bashrc
    ```
 
-7. **Check service status**:
-   ```bash
-   systemctl --user status coyote.service
-   ```
-
-**Note**: The service file (`coyote.service`) must be located at `~/.config/systemd/user/coyote.service` to function properly. A template is provided in the project root directory.
-
 ## System Manager
 
-The Coyote System Manager is a terminal-based utility for monitoring and managing system components:
-
-### Features
-- **Network Management**: 
-  - View and manage VPN status
-  - Display wireless access points and connection status
-  - Monitor wired network connections
-  - Store and manage wifi credentials for known networks
-
-- **Audio Management**: 
-  - List USB microphone names and their volume levels
-  - Display audio output device names and their volume levels
-  - Adjust volume levels with audible feedback
-  - Control devices with step-based volume adjustments
-
-- **Service Management**: 
-  - Show the status of the `coyote.service`
-  - Provide options to start, stop, and restart the service
-
-- **Content Features**:
-  - Television transcript display and management
-  - Interactive dialogue system
-
-### Installation
-There are two ways to use the System Manager:
-
-1. **Run directly** (recommended):
-   ```bash
-   cd ~/coyote_interactive/manager
-   ./run_manager.py
-   ```
-
-2. **Install as a package**:
-   ```bash
-   cd ~/coyote_interactive
-   pip install -e ./manager
-   coyote-manager
-   ```
-
-### System Configuration
-The manager includes a configuration script (`check_system.py`) to verify and set up system requirements:
-
-```bash
-cd ~/coyote_interactive/manager
-python check_system.py
-```
-
-This script will:
-- Check and configure sudo permissions for NetworkManager WiFi operations
-- Verify the coyote.service file is properly installed
-- Enable systemd user lingering (allows services to run without login)
-- Verify required system dependencies are installed
-- Set up proper sudo permissions for systemctl commands
-
-For complete details about the manager, see the [manager README](manager/README.md).
-
-## Operation
-- **Wake Mode**: System actively responds to button presses for TV or person interactions.
-  - Conversation directory is checked/created before each interaction to ensure stability.
-- **Sleep Mode**: System is idle but monitors for the special "BOOM" button combination.
-  - Pressing both TV and person buttons archives the current conversation with a timestamp.
-- **Conversation Management**: 
-  - Conversations are stored in JSON format
-  - Archives are automatically named with timestamps (e.g. `conversation_YYYYMMDD_HHMMSS.json`)
-
-## Demonstration Video
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=pncuq-U_tuU)  
-[![Video Thumbnail](https://img.youtube.com/vi/pncuq-U_tuU/0.jpg)](https://www.youtube.com/watch?v=pncuq-U_tuU)
+For complete details about the system manager utility, see the [manager README](manager/README.md).
 
