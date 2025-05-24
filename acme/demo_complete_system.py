@@ -17,17 +17,17 @@ def print_banner():
     """Print the ACME banner."""
     banner = """
 🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺
-🏺                                                              🏺
+🏺                                                            🏺
 🏺    █████╗  ██████╗ ███╗   ███╗███████╗                     🏺
 🏺   ██╔══██╗██╔════╝ ████╗ ████║██╔════╝                     🏺
 🏺   ███████║██║      ██╔████╔██║█████╗                       🏺
 🏺   ██╔══██║██║      ██║╚██╔╝██║██╔══╝                       🏺
 🏺   ██║  ██║╚██████╗ ██║ ╚═╝ ██║███████╗                     🏺
 🏺   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝                     🏺
-🏺                                                              🏺
-🏺        COMPLETE SHOPPING NETWORK SYSTEM DEMO                🏺
-🏺           "If it's ACME, it's gotta be good!"               🏺
-🏺                                                              🏺
+🏺                                                            🏺
+🏺        COMPLETE SHOPPING NETWORK SYSTEM DEMO               🏺
+🏺           "If it's ACME, it's gotta be good!"              🏺
+🏺                                                            🏺
 🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺🏺
     """
     print(banner)
@@ -85,7 +85,7 @@ def demo_qvc_gallery():
     
     try:
         print("\n🌐 Opening QVC Gallery in browser...")
-        gallery_path = os.path.abspath('acme/qvc_gallery.html')
+        gallery_path = os.path.abspath('acme/qvc_gallery_standalone.html')
         webbrowser.open(f'file://{gallery_path}')
         print("   ✅ Gallery opened successfully!")
     except Exception as e:
@@ -178,7 +178,7 @@ def demo_integration():
     print("\n📁 Project Structure:")
     print("   acme/")
     print("   ├── ACME.md                     # Comprehensive documentation")
-    print("   ├── qvc_gallery.html            # Interactive shopping gallery")
+    print("   ├── qvc_gallery_standalone.html # Interactive shopping gallery")
     print("   ├── tv_broadcaster.py           # TV/audio broadcasting")
     print("   ├── youtube_finder.py           # Episode finder/downloader")
     print("   ├── acme_products_clean.json    # Product database")
