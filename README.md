@@ -3,7 +3,6 @@
 # Coyote Interactive
 
 ## Overview
-A modular system for interactive coyote behaviors and communications.
 
 ## Features
 - **LEDs**: Control of LED patterns.
@@ -101,6 +100,30 @@ The Coyote System Manager is a terminal-based utility for monitoring and managin
 - **Content Features**:
   - Television transcript display and management
   - Interactive dialogue system
+
+## Hardware Requirements
+- Raspberry Pi (with GPIO pins)
+- LEDs for visual feedback
+- Buttons/switches for physical interaction
+- Microphone for audio input
+- Speaker for audio output
+
+## Software Dependencies
+- Python 3.8+
+- gpiozero for GPIO control
+- lgpio for low-level GPIO operations
+- OpenAI or compatible API for LLM integration
+- whisper-stream for speech recognition
+- Textual for TUI interface
+- Various system utilities (PulseAudio, NetworkManager, etc.)
+
+## System Architecture
+The codebase follows a modular approach with components for:
+- Main program logic (`coyote.py`)
+- Hardware control (buttons, LEDs)
+- Audio processing (speech recognition, synthesis)
+- AI interaction (prompts, conversation management)
+- System management (network, audio, services)
 
 ### Installation
 There are two ways to use the System Manager:
