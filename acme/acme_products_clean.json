@@ -1,0 +1,534 @@
+{
+  "series_abbreviations": {
+    "LT": "Looney Tunes",
+    "MM": "Merrie Melodies",
+    "TTA": "Tiny Toon Adventures",
+    "AMS": "Animaniacs",
+    "TM": "Taz-Mania",
+    "STM": "The Sylvester and Tweety Mysteries",
+    "DD": "Duck Dodgers",
+    "TLTS": "The Looney Tunes Show",
+    "PATB": "Pinky and the Brain"
+  },
+  "products": [
+    {
+      "product_name": "Anvil",
+      "usage": "Gee Whiz-z-z-z-z-z-zGoing! Going! Gosh!",
+      "episode": "LT/MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/image",
+      "product_name": "School of Boxing",
+      "usage": "Count Me Out",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Toaster",
+      "usage": "\"The Good Egg\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "",
+      "product_name": "Super Outfit",
+      "usage": "Doesn't give one the ability to fly.",
+      "episode": "Fast and Furry-ous=",
+      "series": "LT"
+    },
+    {
+      "product_name": "Hen Grenade",
+      "usage": "\"The EGGcited Rooster\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/b",
+      "product_name": "Aspirin",
+      "usage": "\"Beep, Beep\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/a",
+      "product_name": "Matches",
+      "usage": "Regular, everyday matches, good for igniting things",
+      "episode": "\"Beep, Beep\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "",
+      "product_name": "Rocket-Powered Roller Skates",
+      "usage": "Let you skate at unlimited speed",
+      "episode": "\"Beep, Beep\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocoo",
+      "product_name": "Street Cleaners Wagon",
+      "usage": "Can be used for trash can or as a a customizable balloon basket",
+      "episode": "\"Going! Going! Gosh!\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Stovelid",
+      "usage": "\"Rabbit's Kin\"",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Stovelid Lifter",
+      "usage": "\"Rabbit's Kin\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Giant Kite Kit",
+      "usage": "Can be used as a regular kite, or can be used to fly and drop weapons",
+      "episode": "\"Zipping Along\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Bird Seed Ver. 1",
+      "usage": "Part of a bird's nutritious meal",
+      "episode": "\"Zipping Along\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/2/2b",
+      "product_name": "Nitroglycerin",
+      "usage": "HANDLE WITH EXTREME CARE!",
+      "episode": "\"Zipping Along\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/imag",
+      "product_name": "Detonator",
+      "usage": "Can be used as an activation to be attached to explosives",
+      "episode": "\"Zipping Along\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Bird Seed Ver. 2",
+      "usage": "Different box, same great taste!\"Silly kiddies, seeds are for birds!\" (Parody of Trix)",
+      "episode": "\"Stop! Look! And Hasten!\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.",
+      "product_name": "Triple-Strength Fortified Leg Muscle Vitamins",
+      "usage": "\"Gives your legs the vitamins it needs to run faster than ever before!\"",
+      "episode": "\"Stop! Look! And Hasten!\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/0",
+      "product_name": "Glue V1",
+      "usage": "A real sticky adhesive",
+      "episode": "Ready.. Set.. Zoom!",
+      "series": "LT"
+    },
+    {
+      "product_name": "Female Road Runner Costume",
+      "usage": "Lets you disguise yourself as a female Road Runner,just watch out for other Coyotes",
+      "episode": "Ready.. Set.. Zoom!",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/",
+      "product_name": "Smoke Screen Bomb",
+      "usage": "Creates a cloud of smoke, like fog, for camouflage",
+      "episode": "\"Sheep Ahoy\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Artificial Rock",
+      "usage": "Lets you become like a real rock out in the open",
+      "episode": "\"Sheep Ahoy\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Hair Grower",
+      "usage": "\"Double or Mutton\"=",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/9/9",
+      "product_name": "Grease",
+      "usage": "50% Slippery",
+      "episode": "\"Guided Muscle\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Trick Balls",
+      "usage": "\"Raw! Raw! Rooster!\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/5",
+      "product_name": "Triple-Strength Battleship Steel Armor Plate",
+      "usage": "Usually it would fend off most objects, but not Road Runners",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/",
+      "product_name": "Bat-Man's Outfit",
+      "usage": "Unlike the DC super hero, Bat-Man, this outfit will actually let you fly high in the sky!",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Giant Rubber Band V1",
+      "usage": "Used for giant aerial slingshots to shoot things",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Handle Bars",
+      "usage": "Part of the Jet Bike Kit",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/imag",
+      "product_name": "Jet Motor",
+      "usage": "Part of the Jet Bike Kit",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Jet Bike (Kit)",
+      "usage": "Like a motorcycle, but without wheels",
+      "episode": "\"Gee Whiz-z-z-z-z-z-z\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.",
+      "product_name": "Dehydrated Boulders",
+      "usage": "Makes instant boulders with just a drop of water",
+      "episode": "\"Scrambled Aches\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Bumble Bees (One Fifth)",
+      "usage": "A real stinger!",
+      "episode": "\"Zoom and Bored\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Giant Rubber Band V2",
+      "usage": "For Tripping Road Runners",
+      "episode": "\"Whoa, Be-Gone!\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Do-It-Yourself Tornado Kit",
+      "usage": "Lets you \"seed\" your own tornadoes",
+      "episode": "\"Whoa, Be-Gone!\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Tornado Seeds",
+      "usage": "Part of the Tornado Kit",
+      "episode": "\"Whoa, Be-Gone!\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Water Pistol",
+      "usage": "A Basic Squirt Gun Toy, part of the Tornado Kit",
+      "episode": "\"Whoa, Be-Gone!\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/loon",
+      "product_name": "Bird Seed Ver. 3",
+      "usage": "Now comes in can-packed proportions!",
+      "episode": "\"Hook, Line and Stinker\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Hi-Speed Tonic",
+      "usage": "Lets one run super fast",
+      "episode": "\"Hip- Hip- Hurry!\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia",
+      "product_name": "Jet-Propelled Pogo-Stick",
+      "usage": "\"Hot-Rod and Reel!\"</a>",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.noc",
+      "product_name": "Jet-Propelled Unicycle",
+      "usage": "\"Hot-Rod and Reel!\"</a>",
+      "episode": "LT"
+    },
+    {
+      "product_name": "Trick Bone",
+      "usage": "\"Feather Bluster\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Giant Rubber Band V3",
+      "usage": "Used for human-slingshots",
+      "episode": "\"Wild About Hurry\"=",
+      "series": "MM"
+    },
+    {
+      "product_name": "Rocket Cart/Sled V1",
+      "usage": "\"Wild About Hurry\"=",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Iron Pellets V1",
+      "usage": "A good source of iron",
+      "episode": "\"Wild About Hurry\"=",
+      "series": "MM"
+    },
+    {
+      "product_name": "Bird Seed Ver. 4",
+      "usage": "\"Wild About Hurry\"=",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.noc",
+      "product_name": "Indestructo Steel Ball",
+      "usage": "Lets you roll in a ball that's literally indestructible",
+      "episode": "\"Wild About Hurry\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "",
+      "product_name": "Bomb V2",
+      "usage": "Comes with a timer attachment",
+      "episode": "\"Fastest with the Mostest\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Balloon Basket",
+      "usage": "\"Fastest with the Mostest\"",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/4",
+      "product_name": "Balloon",
+      "usage": "Useful for Hot Air Balloonists",
+      "episode": "\"Fastest with the Mostest\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Bed Springs",
+      "usage": "Literally puts a SPRING in your step!",
+      "episode": "\"Ready, Woolen and Able\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Christmas Package Machine",
+      "usage": "Puts anything and or ANYONE into small packaged-wrapped presents.",
+      "episode": "\"Hopalong Casualty\"</a>",
+      "series": "LT"
+    },
+    {
+      "product_name": "Earthquake Pills",
+      "usage": "Makes instant EarthquakesCAUTION:No Effect On Road-Runners.",
+      "episode": "\"Hopalong Casualty\"</a>",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/loon",
+      "product_name": "Iron Pellets v2",
+      "usage": "Now with 50% more iron!",
+      "episode": "\"Zip 'n Snort\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Axle Grease",
+      "usage": "Guarantees INDEED to be slippery!",
+      "episode": "\"Zip 'n Snort\"",
+      "series": "MM"
+    },
+    {
+      "product_name": "Roller Skis",
+      "usage": "Now you can ski wherever you go! Not just on the snow, but everywhere!",
+      "episode": "Lickety-Splat",
+      "series": "LT"
+    },
+    {
+      "product_name": "Iron Carrot",
+      "usage": "\"COMpressed Hare\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Iron Bird Seed",
+      "usage": "\"Beep Prepared\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/3/",
+      "product_name": "Little-Giant Do-It-Yourself Rocket Sled Kit",
+      "usage": "\"Beep Prepared\"",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Bird Seed Ver. 5",
+      "usage": "\"Zoom at the Top\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Instant Icicle Maker",
+      "usage": "\"Zoom at the Top\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/imag",
+      "product_name": "Boomerang",
+      "usage": "Guaranteed to return",
+      "episode": "\"Zoom at the Top\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/imag",
+      "product_name": "Iron Glue",
+      "usage": "\"Zoom at the Top\"",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Instant Awakener",
+      "usage": "\"A Sheep in the Deep\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocooki",
+      "product_name": "Super Speed Vitamins",
+      "usage": "\"Hare-Breadth Hurry\"",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/e",
+      "product_name": "Glue V2",
+      "usage": "\"Hare-Breadth Hurry\"",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/loon",
+      "product_name": "Invisible Paint",
+      "usage": "\"War and Pieces\"",
+      "episode": "LT"
+    },
+    {
+      "product_name": "Sproing Boots",
+      "usage": "\"Rushing Roulette\"=",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Lightning Rod",
+      "usage": "\"Run, Run, Sweet Road Runner\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://",
+      "product_name": "Little-Giant Snow Cloud Seeder",
+      "usage": "Makes Instant Snow",
+      "episode": "\"Freeze Frame\"",
+      "series": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/4/4d/Sp",
+      "product_name": "Speed Skates",
+      "usage": "\"Freeze Frame\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.ne",
+      "product_name": "Jet-Propelled Skis",
+      "usage": "\"Freeze Frame\"",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Frisbee Disc",
+      "usage": "\"Soup or Sonic\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.w",
+      "product_name": "Little Giant - Giant Fire Crackers",
+      "usage": "\"Soup or Sonic\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/loon",
+      "product_name": "Giant Fly Paper",
+      "usage": "\"Soup or Sonic\"",
+      "episode": "MM"
+    },
+    {
+      "screenshot_url": "https://static.wikia.noc",
+      "product_name": "Explosive Tennis Balls",
+      "usage": "\"Soup or Sonic\"",
+      "episode": "MM"
+    },
+    {
+      "product_name": "Giant Mouse Trap",
+      "usage": "\"Chariots of Fur\"",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/0/0d/",
+      "product_name": "Instant Road",
+      "usage": "\"Chariots of Fur\"",
+      "episode": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looney",
+      "product_name": "Cactus Costume (From ACME Costume Co.)",
+      "usage": "Disguise yourself as a cactus and scare others.",
+      "episode": "\"Chariots of Fur\"",
+      "series": "LT"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/loon",
+      "product_name": "Lightning Bolts(with Fat Free Rubber Gloves)",
+      "usage": "Be like the Greek god Zeus and shoot lightning bolts from far distances. Fat Free Rubber Gloves included.",
+      "episode": "\"Chariots of Fur\"",
+      "series": "LT"
+    },
+    {
+      "product_name": "Bird Seed Ver. 6",
+      "usage": "\"Love Stinks\"",
+      "episode": "TTA"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/7/7c/Tar.",
+      "product_name": "Tar",
+      "usage": "\"Love Stinks\"",
+      "episode": "TTA"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images/a/a",
+      "product_name": "Jr Jet",
+      "usage": "\"Love Stinks\"",
+      "episode": "TTA"
+    },
+    {
+      "screenshot_url": "https://static.wikia.nocookie.net/looneytunes/images",
+      "product_name": "Zap Trap",
+      "usage": "\"Love Stinks\"",
+      "episode": "TTA"
+    },
+    {
+      "screenshot_url": "",
+      "product_name": "Super Bug Spray",
+      "usage": "Use ACME Super Bug Spray. \"They won't be back!\"",
+      "episode": "\"The Roches\"",
+      "series": "TTA"
+    }
+  ],
+  "total_count": 84
+}

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Shopping Network - Wile E. Coyote's Favorite Retailer!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            z-index: 2;
+            position: relative;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            z-index: 2;
+            position: relative;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem auto;
+            max-width: 600px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .controls {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .host-selector {
+            margin-bottom: 1rem;
+        }
+
+        .host-selector label {
+            font-weight: bold;
+            margin-right: 1rem;
+            color: #333;
+        }
+
+        .host-selector select {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 2px solid #ff6b6b;
+            font-size: 1rem;
+        }
+
+        .product-filter {
+            margin: 1rem 0;
+        }
+
+        .product-filter input {
+            padding: 0.8rem;
+            border: 2px solid #4ecdc4;
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .shopping-cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .shopping-cart:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            background: white;
+            color: #ff6b6b;
+            border-radius: 50%;
+            padding: 0.2rem 0.5rem;
+            margin-left: 0.5rem;
+            font-weight: bold;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            color: #666;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-episode {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-usage {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #ff5252, #ff7043);
+            transform: scale(1.05);
+        }
+
+        .host-commentary {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            margin: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .host-name {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .commentary-text {
+            font-style: italic;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .special-offer {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem;
+            border-radius: 10px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255,255,255,0.9);
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                padding: 1rem;
+            }
+
+            .shopping-cart {
+                top: 10px;
+                right: 10px;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏺 ACME Shopping Network 🏺</h1>
+        <h2>Your One-Stop Shop for Cartoon Chaos!</h2>
+        <div class="tagline">
+            "If it's ACME, it's guaranteed to work... eventually!" - Wile E. Coyote
+        </div>
+    </div>
+
+    <div class="special-offer">
+        🔥 SUPER SPECIAL! Buy any 3 products and get a FREE Anvil! 🔥
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">84</div>
+            <div class="stat-label">Products Available</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Coyote Tested</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Fun Guaranteed</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="host-selector">
+            <label for="host-select">Choose Your Shopping Host:</label>
+            <select id="host-select" onchange="changeHost()">
+                <option value="bob">Bob "Boom" Richardson - Explosives Expert</option>
+                <option value="sally">Sally Speedster - Velocity Specialist</option>
+                <option value="chuck">Chuck Contraption - Gadget Guru</option>
+                <option value="betty">Betty Bargain - Deal Detective</option>
+            </select>
+        </div>
+        <div class="product-filter">
+            <input type="text" id="search-input" placeholder="🔍 Search for ACME products..." onkeyup="filterProducts()">
+        </div>
+    </div>
+
+    <div class="shopping-cart" onclick="toggleCart()">
+        🛒 Cart <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <div class="host-commentary" id="host-commentary">
+        <div class="host-name" id="host-name">Bob "Boom" Richardson</div>
+        <div class="commentary-text" id="commentary-text">
+            Welcome to ACME Shopping Network! I'm Bob, and I've been testing these explosive products since 1949. 
+            Today we have some FANTASTIC deals that'll blow you away - literally! Let's start with our classic Anvil...
+        </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+        <!-- Products will be loaded here by JavaScript -->
+    </div>
+
+    <script>
+        const hosts = {
+            'bob': {
+                name: 'Bob "Boom" Richardson',
+                specialty: 'Explosives Expert',
+                commentary: "Welcome to ACME Shopping Network! I'm Bob, and I've been testing these explosive products since 1949. Today we have some FANTASTIC deals that'll blow you away - literally!"
+            },
+            'sally': {
+                name: 'Sally Speedster',
+                specialty: 'Velocity Specialist', 
+                commentary: "Hi there, speed demons! I'm Sally, and I LOVE anything that goes fast! These ACME products will have you zooming around the desert in no time. Beep beep!"
+            },
+            'chuck': {
+                name: 'Chuck Contraption',
+                specialty: 'Gadget Guru',
+                commentary: "Greetings, inventors! Chuck here, ready to show you the most ingenious contraptions known to coyote-kind. These devices are so clever, they practically think for themselves!"
+            },
+            'betty': {
+                name: 'Betty Bargain',
+                specialty: 'Deal Detective',
+                commentary: "Hello, savvy shoppers! Betty here with the BEST deals in the desert! I've negotiated prices so low, even a coyote on a budget can afford premium ACME quality!"
+            }
+        };
+
+        let cart = [];
+        let allProducts = [];
+
+        // Sample ACME products data
+        const acmeProducts = [
+            {
+                name: "Anvil",
+                episode: "LT/MM",
+                usage: "Classic gravity-powered percussive device. Perfect for dropping on unsuspecting roadrunners!",
+                price: "$299.99",
+                originalPrice: "$599.99",
+                emoji: "🗿"
+            },
+            {
+                name: "Super Outfit",
+                episode: "Fast and Furry-ous (LT)",
+                usage: "Doesn't give one the ability to fly, but looks great while falling!",
+                price: "$149.99",
+                originalPrice: "$299.99",
+                emoji: "🦸"
+            },
+            {
+                name: "Rocket-Powered Roller Skates",
+                episode: "Beep, Beep (MM)",
+                usage: "Let you skate at unlimited speed! Warning: May cause road burn.",
+                price: "$199.99",
+                originalPrice: "$399.99",
+                emoji: "🛼"
+            },
+            {
+                name: "Giant Kite Kit",
+                episode: "Zipping Along (MM)",
+                usage: "Can be used as a regular kite, or to fly and drop weapons. Assembly required.",
+                price: "$89.99",
+                originalPrice: "$179.99",
+                emoji: "🪁"
+            },
+            {
+                name: "Nitroglycerin",
+                episode: "Zipping Along (MM)",
+                usage: "HANDLE WITH EXTREME CARE! Not recommended for beginners.",
+                price: "$799.99",
+                originalPrice: "$1299.99",
+                emoji: "💥"
+            },
+            {
+                name: "Detonator",
+                episode: "Zipping Along (MM)",
+                usage: "Can be used as activation for explosives. Satisfaction guaranteed or your money back!",
+                price: "$129.99",
+                originalPrice: "$259.99",
+                emoji: "🧨"
+            },
+            {
+                name: "Bird Seed Ver. 2",
+                episode: "Stop! Look! And Hasten! (MM)",
+                usage: "Different box, same great taste! 'Silly kiddies, seeds are for birds!' (Parody of Trix)",
+                price: "$12.99",
+                originalPrice: "$24.99",
+                emoji: "🌱"
+            },
+            {
+                name: "Triple-Strength Fortified Leg Muscle Vitamins",
+                episode: "Stop! Look! And Hasten! (MM)",
+                usage: "Gives your legs the vitamins needed to run faster than ever before!",
+                price: "$59.99",
+                originalPrice: "$119.99",
+                emoji: "💊"
+            },
+            {
+                name: "Female Road Runner Costume",
+                episode: "Ready.. Set.. Zoom! (LT)",
+                usage: "Disguise yourself as a female Road Runner. Just watch out for other coyotes!",
+                price: "$179.99",
+                originalPrice: "$359.99",
+                emoji: "🐦"
+            },
+            {
+                name: "Smoke Screen Bomb",
+                episode: "Sheep Ahoy (MM)",
+                usage: "Creates a cloud of smoke for camouflage. Perfect for dramatic exits!",
+                price: "$39.99",
+                originalPrice: "$79.99",
+                emoji: "💨"
+            },
+            {
+                name: "Bat-Man's Outfit",
+                episode: "Gee Whiz-z-z-z-z-z-z (LT)",
+                usage: "Unlike the DC superhero, this outfit will actually let you fly high in the sky!",
+                price: "$499.99",
+                originalPrice: "$999.99",
+                emoji: "🦇"
+            },
+            {
+                name: "Dehydrated Boulders",
+                episode: "Scrambled Aches (LT)",
+                usage: "Makes instant boulders with just a drop of water. Compact and convenient!",
+                price: "$249.99",
+                originalPrice: "$499.99",
+                emoji: "🪨"
+            },
+            {
+                name: "Do-It-Yourself Tornado Kit",
+                episode: "Whoa, Be-Gone! (MM)",
+                usage: "Lets you 'seed' your own tornadoes. Weather manipulation made easy!",
+                price: "$1299.99",
+                originalPrice: "$2599.99",
+                emoji: "🌪️"
+            },
+            {
+                name: "Hi-Speed Tonic",
+                episode: "Hip- Hip- Hurry! (MM)",
+                usage: "Lets one run super fast! Side effects may include dizziness and dust clouds.",
+                price: "$79.99",
+                originalPrice: "$159.99",
+                emoji: "🏃"
+            },
+            {
+                name: "Indestructo Steel Ball",
+                episode: "Wild About Hurry (MM)",
+                usage: "Lets you roll in a ball that's literally indestructible. Fun for the whole family!",
+                price: "$399.99",
+                originalPrice: "$799.99",
+                emoji: "⚽"
+            },
+            {
+                name: "Christmas Package Machine",
+                episode: "Hopalong Casualty (LT)",
+                usage: "Puts anything and ANYONE into small packaged-wrapped presents.",
+                price: "$899.99",
+                originalPrice: "$1799.99",
+                emoji: "🎁"
+            },
+            {
+                name: "Earthquake Pills",
+                episode: "Hopalong Casualty (LT)",
+                usage: "Makes instant earthquakes! CAUTION: No effect on Road-Runners.",
+                price: "$699.99",
+                originalPrice: "$1399.99",
+                emoji: "🌍"
+            },
+            {
+                name: "Boomerang",
+                episode: "Zoom at the Top (MM)",
+                usage: "Guaranteed to return! Perfect for remote hunting applications.",
+                price: "$49.99",
+                originalPrice: "$99.99",
+                emoji: "🪃"
+            },
+            {
+                name: "Invisible Paint",
+                episode: "War and Pieces (LT)",
+                usage: "Makes anything completely invisible! Can you see the value?",
+                price: "$299.99",
+                originalPrice: "$599.99",
+                emoji: "🎨"
+            },
+            {
+                name: "TNT",
+                episode: "Multiple episodes (Various)",
+                usage: "Classic explosive for all your demolition needs. Reliable and effective!",
+                price: "$599.99",
+                originalPrice: "$1199.99",
+                emoji: "🧨"
+            }
+        ];
+
+        allProducts = acmeProducts;
+
+        function changeHost() {
+            const hostSelect = document.getElementById('host-select');
+            const selectedHost = hosts[hostSelect.value];
+            
+            document.getElementById('host-name').textContent = selectedHost.name;
+            document.getElementById('commentary-text').textContent = selectedHost.commentary;
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const filteredProducts = allProducts.filter(product =>
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.usage.toLowerCase().includes(searchTerm) ||
+                product.episode.toLowerCase().includes(searchTerm)
+            );
+            displayProducts(filteredProducts);
+        }
+
+        function displayProducts(products) {
+            const grid = document.getElementById('products-grid');
+            grid.innerHTML = '';
+
+            products.forEach((product, index) => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">${product.emoji}</div>
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-episode">Featured in: ${product.episode}</div>
+                    <div class="product-usage">${product.usage}</div>
+                    <div class="product-price">
+                        <span class="original-price">${product.originalPrice}</span>
+                        ${product.price}
+                    </div>
+                    <button class="buy-button" onclick="addToCart('${product.name}', '${product.price}')">
+                        Add to Cart
+                    </button>
+                `;
+                grid.appendChild(productCard);
+            });
+        }
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCartCount();
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.background = '#4ecdc4';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+            }, 1000);
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function toggleCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty! Add some ACME products to get started!");
+                return;
+            }
+            
+            let cartContents = "🛒 ACME Shopping Cart:\n\n";
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const price = parseFloat(item.price.replace('$', ''));
+                cartContents += `${index + 1}. ${item.name} - ${item.price}\n`;
+                total += price;
+            });
+            
+            cartContents += `\n💰 Total: $${total.toFixed(2)}`;
+            cartContents += `\n\n⚡ Special Offer: FREE shipping to any desert location!`;
+            cartContents += `\n🎯 Money-back guarantee* (*if products don't explode as expected)`;
+            
+            alert(cartContents);
+        }
+
+        // Initialize the page
+        displayProducts(allProducts);
+        changeHost();
+
+        // Add some dynamic effects
+        setInterval(() => {
+            const cards = document.querySelectorAll('.product-card');
+            if (cards.length > 0) {
+                const randomCard = cards[Math.floor(Math.random() * cards.length)];
+                randomCard.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    randomCard.style.transform = '';
+                }, 1000);
+            }
+        }, 5000);
+    </script>
+</body>
+</html> 
